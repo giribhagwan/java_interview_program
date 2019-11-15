@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MathFormalReprasentation {
@@ -8,19 +10,28 @@ public class MathFormalReprasentation {
         Scanner in = new Scanner(System.in);
         int t=in.nextInt();
         int a = 0,b = 0,n = 0;
+        List<int[]> result=new ArrayList<>();
         for(int i=0;i<t;i++){
              a = in.nextInt();
-              b = in.nextInt();
-              n = in.nextInt();
-
-
+             b = in.nextInt();
+             n = in.nextInt();
+            int[] r= new int[n];
+            int count=0;
+             for(int j=1;j<n;j++){
+                 count++;
+                 int rr=0;
+               do{
+                    rr+=(j*j)+b;
+               }while (j>count);
+                r[j]=a+rr;
+             }
+             result.add(r);
         }
-        for (int i=0;i<t;i++) {
-        for (int j = 0; j < n; j++) {
-                System.out.print(a + (2 * j) + b + " ");
-        }
-        System.out.println();
-    }
+        result.forEach(e->{
+            for (int i=0;i<e.length;i++)
+                System.out.print("\t"+e[i]);
+            System.out.println();
+        });
         in.close();
     }
 
