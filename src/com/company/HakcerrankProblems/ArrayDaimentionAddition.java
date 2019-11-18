@@ -1,4 +1,4 @@
-package com.company;
+package com.company.HakcerrankProblems;
 import java.io.*;
 import java.math.*;
 import java.security.*;
